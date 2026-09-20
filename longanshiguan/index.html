@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="龙安视官网提供专业智能视频监控、安防解决方案及云端管理平台。涵盖高清摄像头、NVR录像机、智能家居安防及行业定制服务，致力于打造安全、智能、便捷的视觉管理体验。">
+    <meta name="keywords" content="龙安视官网,视频监控,智能安防,高清摄像头,龙安视监控系统">
+    <title>龙安视官网-专业智能视频监控与安防解决方案提供商</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #00a8ff;
+            --dark-bg: #1a1f2c;
+            --light-bg: #f4f7f6;
+            --text-main: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .bg-light {
+            background-color: var(--light-bg);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--dark-bg);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn-cta {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn-cta:hover {
+            background-color: #004494;
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 100%);
+            color: var(--white);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 4px solid rgba(255,255,255,0.1);
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 86, 179, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-bg);
+        }
+
+        /* Products Section */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+            background: var(--white);
+        }
+
+        .product-card:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .product-img {
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-tag {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .product-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .btn-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* Application Scenarios */
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .scenario-item {
+            position: relative;
+            height: 250px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .scenario-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .scenario-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .scenario-overlay {
+            position: relative;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            width: 100%;
+            padding: 20px;
+            color: var(--white);
+        }
+
+        .scenario-overlay h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        
+        .faq-item:not(.active) .faq-question::after {
+            content: '+';
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col p {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .scenario-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* In a real scenario, use a hamburger menu */
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                <span>龙安视官网</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#products">产品中心</a></li>
+                    <li><a href="#solutions">解决方案</a></li>
+                    <li><a href="#support">技术支持</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn-cta">联系咨询</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>智慧视觉管理专家</h1>
+                <p>龙安视提供从硬件到软件的全栈式视频监控解决方案。依托先进的AI算法与云技术，为家庭、企业及公共安全提供清晰、稳定、智能的视觉管理服务。</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn-cta">浏览产品</a>
+                    <a href="#solutions" class="btn-outline">了解方案</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Placeholder for a surveillance dashboard or camera view -->
+                <img src="https://picsum.photos/seed/surveillance/600/400" alt="龙安视智能监控界面示意图">
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">核心优势</h2>
+                <p class="section-subtitle">为什么选择龙安视官网为您服务</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3>高清画质</h3>
+                    <p>支持4K超高清视频传输，配合宽动态技术，即使在复杂光线下也能捕捉清晰细节。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M12 6v6l4 2"></path></svg>
+                    </div>
+                    <h3>实时监控</h3>
+                    <p>毫秒级低延迟传输，随时随地通过手机、平板或电脑查看实时画面，掌握现场动态。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    </div>
+                    <h3>智能AI</h3>
+                    <p>集成人脸识别、行为分析及异常报警功能，主动发现安全隐患，提升管理效率。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    </div>
+                    <h3>云端管理</h3>
+                    <p>数据安全存储于云端服务器，支持多终端同步，提供便捷的远程配置与回放功能。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section bg-light">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">产品中心</h2>
+                <p class="section-subtitle">全方位覆盖各类安防监控需求</p>
+            </div>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <article class="product-card">
+                    <div class="product-img">
+                        <img src="https://picsum.photos/seed/camera1/400/300" alt="龙安视4K智能摄像头">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">家用安防</span>
+                        <h3>龙安视 4K AI智能摄像头</h3>
+                        <p>夜视增强，双向语音通话，支持移动侦测录像。</p>
+                        <a href="#" class="btn-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+                <!-- Product 2 -->
+                <article class="product-card">
+                    <div class="product-img">
+                        <img src="https://picsum.photos/seed/nvr/400/300" alt="龙安视NVR录像机">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">专业存储</span>
+                        <h3>龙安视 8路智能NVR录像机</h3>
+                        <p>支持H.265编码，大容量硬盘扩展，多路并发。</p>
+                        <a href="#" class="btn-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+                <!-- Product 3 -->
+                <article class="product-card">
+                    <div class="product-img">
+                        <img src="https://picsum.photos/seed/ipcam/400/300" alt="龙安视网络摄像机">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">室外防水</span>
+                        <h3>龙安视 360°全景云台机</h3>
+                        <p>IP67防水防尘，自动巡航追踪，智能预警。</p>
+                        <a href="#" class="btn-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+                <!-- Product 4 -->
+                <article class="product-card">
+                    <div class="product-img">
+                        <img src="https://picsum.photos/seed/access/400/300" alt="龙安视门禁系统">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">智能门禁</span>
+                        <h3>龙安视智能门禁一体机</h3>
+                        <p>人脸识别开门，远程访客授权，记录考勤数据。</p>
+                        <a href="#" class="btn-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">应用场景</h2>
+                <p class="section-subtitle">针对不同行业定制化视觉管理方案</p>
+            </div>
+            <div class="scenario-grid">
+                <div class="scenario-item">
+                    <img src="https://picsum.photos/seed/building/600/400" alt="智慧园区解决方案">
+                    <div class="scenario-overlay">
+                        <h4>智慧园区</h4>
+                        <p>车牌识别、周界防范、人员通行管理一体化</p>
+                    </div>
+                </div>
+                <div class="scenario-item">
+                    <img src="https://picsum.photos/seed/store/600/400" alt="零售门店解决方案">
+                    <div class="scenario-overlay">
+                        <h4>零售门店</h4>
+                        <p>客流统计、防损防盗、智能导购引导</p>
+                    </div>
+                </div>
+                <div class="scenario-item">
+                    <img src="https://picsum.photos/seed/traffic/600/400" alt="交通道路解决方案">
+                    <div class="scenario-overlay">
+                        <h4>交通道路</h4>
+                        <p>违章抓拍、流量监测、路况实时分析</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support & FAQ -->
+    <section id="support" class="section bg-light">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">技术支持</h2>
+                <p class="section-subtitle">常见问题解答与帮助中心</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item active">
+                    <div class="faq-question">如何远程查看监控画面？</div>
+                    <div class="faq-answer">您需要确保摄像头已连接网络，下载并安装“龙安视”官方APP或使用PC端客户端。通过注册账号绑定设备，即可在手机或电脑上随时随地查看实时画面。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">系统是否支持云存储功能？</div>
+                    <div class="faq-answer">是的，龙安视官网提供的所有智能摄像头均支持本地SD卡存储，同时也提供安全可靠的云端存储服务，防止因设备损坏导致数据丢失。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">设备安装复杂吗？</div>
+                    <div class="faq-answer">我们的产品设计注重易用性。大多数室内摄像头支持Wi-Fi一键配对，室外设备只需固定位置并连接电源即可。如需专业安装，可联系我们的售前客服预约上门服务。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">产品保修期是多久？</div>
+                    <div class="faq-answer">龙安视提供1年整机保修服务，主要部件（如传感器、主板）保修期更长。具体保修政策请参考产品说明书或咨询在线客服。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                        <span style="color:white;">龙安视官网</span>
+                    </div>
+                    <p>致力于为全球客户提供最先进的视频监控技术与解决方案，守护您的每一刻安全。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品系列</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">高清摄像头</a></li>
+                        <li><a href="#">NVR录像机</a></li>
+                        <li><a href="#">智能门禁</a></li>
+                        <li><a href="#">云存储服务</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持与服务</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">驱动下载</a></li>
+                        <li><a href="#">安装指南</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul class="footer-links">
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：support@longanshi.com</li>
+                        <li>地址：中国科技园区创新大道88号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 龙安视官网 版权所有 | 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Interaction
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+  </html>
