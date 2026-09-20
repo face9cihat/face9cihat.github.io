@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="跆拳道精神 - 深度解析跆拳道核心价值观与哲学内涵。了解礼仪、廉耻、忍耐、克己、百折不屈的五大精神支柱，以及如何在训练与生活中践行跆拳道精神。">
+    <meta name="keywords" content="跆拳道精神, 跆拳道哲学, 礼仪廉耻, 跆拳道价值观, 跆拳道训练, 武道精神">
+    <title>跆拳道精神-核心价值观与武道哲学深度解析</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #c0392b; /* 跆拳道红/黑带配色 */
+            --secondary-color: #2c3e50; /* 深蓝黑 */
+            --accent-color: #f1c40f; /* 金色/荣誉 */
+            --bg-light: #f9f9f9;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --white: #ffffff;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            background-color: #a93226;
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #1a252f 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSI+PHBhdGggZD0iTTAgNDBoNDBNNDAgMHY0MCIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 5 Principles Grid */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .principle-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .principle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .principle-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .principle-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .principle-card p {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        /* Philosophy Content */
+        .philosophy-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+            background: var(--white);
+            padding: 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .philosophy-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .philosophy-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .philosophy-text p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .philosophy-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .philosophy-image img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Application Section */
+        .application-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .app-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .app-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: rgba(241, 196, 15, 0.3);
+            line-height: 1;
+        }
+
+        .app-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .app-content p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: var(--border-radius);
+            margin-top: 40px;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .quote-author {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .philosophy-container {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-color);">
+                    <path d="M6 9l6 6 6-6"></path>
+                    <path d="M6 15l6 6 6-6"></path>
+                </svg>
+                跆拳道<span>精神</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#principles" class="active">核心原则</a></li>
+                    <li><a href="#philosophy">武道哲学</a></li>
+                    <li><a href="#application">生活应用</a></li>
+                    <li><a href="#faq">常见问答</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-button">加入训练</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>以礼为先，以武会友</h1>
+            <p>跆拳道不仅仅是格斗技术，更是一种修身养性的哲学。探索跆拳道精神的五大支柱，理解其在现代生活中的深远意义。</p>
+            <div class="hero-tags">
+                <span class="tag">礼仪廉耻</span>
+                <span class="tag">忍耐克己</span>
+                <span class="tag">百折不屈</span>
+            </div>
+            <a href="#principles" class="cta-button" style="background-color: var(--accent-color); color: var(--secondary-color);">探索精神内核</a>
+        </div>
+    </section>
+
+    <main>
+        <!-- 核心原则部分 -->
+        <section id="principles">
+            <div class="section-header">
+                <h2>跆拳道精神五大支柱</h2>
+                <p>这五大原则构成了跆拳道的灵魂，是每一位练习者必须内化于心、外化于行的行为准则。</p>
+            </div>
+            <div class="principles-grid">
+                <article class="principle-card">
+                    <div class="principle-icon">🤝</div>
+                    <h3>礼仪</h3>
+                    <p>跆拳道以礼始，以礼终。通过鞠躬、眼神交流等方式表达对他人的尊重，这是武道精神的基础。</p>
+                </article>
+                <article class="principle-card">
+                    <div class="principle-icon">⚖️</div>
+                    <h3>廉耻</h3>
+                    <p>懂得是非善恶，不因胜利而傲慢，不因失败而气馁，保持谦逊和自省的态度。</p>
+                </article>
+                <article class="principle-card">
+                    <div class="principle-icon">💪</div>
+                    <h3>忍耐</h3>
+                    <p>在训练和生活中面对困难与挫折时，保持冷静，坚持不懈，不轻言放弃。</p>
+                </article>
+                <article class="principle-card">
+                    <div class="principle-icon">🧘</div>
+                    <h3>克己</h3>
+                    <p>控制自己的情绪和行为，学会自律，不被私欲所驱动，专注于目标。</p>
+                </article>
+                <article class="principle-card">
+                    <div class="principle-icon">🔥</div>
+                    <h3>百折不屈</h3>
+                    <p>面对逆境和挑战时，拥有坚韧不拔的意志，永不退缩，勇于克服一切障碍。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 哲学深度解析 -->
+        <section id="philosophy">
+            <div class="philosophy-container">
+                <div class="philosophy-text">
+                    <h3>武道哲学：从格斗到修身</h3>
+                    <p>跆拳道精神源于韩国传统的武道文化，强调“身心合一”。其核心在于将外在的攻击技术转化为内在的精神力量。通过身体的锻炼，磨炼意志；通过精神的修养，规范行为。</p>
+                    <p>在竞技场上，跆拳道精神表现为公平竞争和尊重对手；在日常生活中，它转化为对他人的友善、对工作的负责以及对困难的乐观态度。这种精神超越了武术本身，成为个人品格塑造的重要途径。</p>
+                    <p>学习跆拳道精神，不仅是为了掌握防身技能，更是为了培养一个拥有强大内心和良好品德的人。它教导我们，真正的力量来源于内心的平静与坚定的信念。</p>
+                </div>
+                <div class="philosophy-image">
+                    <img src="https://picsum.photos/seed/tkd_philosophy/600/400" alt="跆拳道训练场景，体现精神内涵" width="600" height="400">
+                </div>
+            </div>
+        </section>
+
+        <!-- 生活应用 -->
+        <section id="application">
+            <div class="section-header">
+                <h2>跆拳道精神在日常生活中的应用</h2>
+                <p>将武道精神融入日常生活，能帮助我们在职场、学习和人际交往中建立更强大的心理素质。</p>
+            </div>
+            <div class="application-list">
+                <div class="app-item">
+                    <div class="app-number">01</div>
+                    <div class="app-content">
+                        <h4>职场素养</h4>
+                        <p>运用“克己”精神，提升职业自律性，高效完成工作任务。</p>
+                    </div>
+                </div>
+                <div class="app-item">
+                    <div class="app-number">02</div>
+                    <div class="app-content">
+                        <h4>情绪管理</h4>
+                        <p>通过“忍耐”与“礼仪”，在冲突中保持冷静，避免情绪失控。</p>
+                    </div>
+                </div>
+                <div class="app-item">
+                    <div class="app-number">03</div>
+                    <div class="app-content">
+                        <h4>团队协作</h4>
+                        <p>践行“礼仪”与尊重，在团队中建立和谐的人际关系。</p>
+                    </div>
+                </div>
+                <div class="app-item">
+                    <div class="app-number">04</div>
+                    <div class="app-content">
+                        <h4>挫折教育</h4>
+                        <p>秉持“百折不屈”的信念，将失败视为成长的垫脚石。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 引用与感悟 -->
+        <div class="quote-section">
+            <p class="quote-text">“跆拳道精神不是挂在墙上的标语，而是刻在骨子里的坚持。”</p>
+            <p class="quote-author">— 跆拳道练习者感悟</p>
+        </div>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+            </div>
+            <div class="principles-grid">
+                <div class="principle-card" style="text-align: left; border-top-color: var(--accent-color);">
+                    <h3>初学者如何理解“礼仪”？</h3>
+                    <p>礼仪不仅仅是见到教练鞠躬，更包括对规则的遵守、对队友的尊重以及在比赛中的公平竞争。它要求练习者在任何时候都保持谦逊和礼貌。</p>
+                </div>
+                <div class="principle-card" style="text-align: left; border-top-color: var(--accent-color);">
+                    <h3>“百折不屈”与“忍耐”有什么区别？</h3>
+                    <p>“忍耐”更多是指在训练过程中忍受身体的酸痛和枯燥；“百折不屈”则是一种更深层次的意志力，指在面对人生重大挫折或失败时，依然能够保持信念，不屈不挠。</p>
+                </div>
+                <div class="principle-card" style="text-align: left; border-top-color: var(--accent-color);">
+                    <h3>跆拳道精神对儿童教育有什么帮助？</h3>
+                    <p>跆拳道精神能帮助儿童培养自信心、纪律性和同理心。通过学习礼仪，他们懂得尊重长辈和他人；通过练习“百折不屈”，他们能在学习上遇到困难时不轻言放弃。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于跆拳道精神</h4>
+                <p>致力于推广跆拳道文化，普及武道哲学，帮助更多人通过跆拳道实现自我提升。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#principles">核心原则</a></li>
+                    <li><a href="#philosophy">武道哲学</a></li>
+                    <li><a href="#application">生活应用</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>邮箱：contact@tkd-spirit.com</li>
+                    <li>地址：武术文化推广中心</li>
+                    <li>电话：400-123-4567</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 跆拳道精神推广中心. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
