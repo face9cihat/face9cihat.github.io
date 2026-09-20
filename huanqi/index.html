@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="幻奇 - 探索超自然现象与都市怪谈的沉浸式阅读平台，收录悬疑、灵异、奇幻漫画与短篇故事。">
+    <meta name="keywords" content="幻奇, 悬疑漫画, 都市传说, 灵异故事, 奇幻小说">
+    <title>幻奇 - 沉浸式悬疑与奇幻阅读平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0f0f13;
+            --bg-card: #1a1a24;
+            --bg-card-hover: #252532;
+            --text-main: #e0e0e0;
+            --text-muted: #9ca3af;
+            --accent-primary: #8b5cf6;
+            --accent-secondary: #ec4899;
+            --accent-glow: rgba(139, 92, 246, 0.3);
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-link {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-link:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Header & Nav */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(15, 15, 19, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1rem 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-primary);
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem 0.5rem 2.5rem;
+            border-radius: 20px;
+            color: #fff;
+            outline: none;
+            width: 200px;
+            transition: width 0.3s ease, border-color 0.3s ease;
+        }
+
+        .search-box input:focus {
+            width: 260px;
+            border-color: var(--accent-primary);
+        }
+
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 15, 19, 0.9) 0%, rgba(15, 15, 19, 0.4) 100%), url('https://picsum.photos/seed/darkfantasy/1920/1080.jpg') center/cover no-repeat;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--accent-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: #fff;
+            border: none;
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--accent-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background-color: var(--bg-card-hover);
+        }
+
+        .card-image-wrapper {
+            position: relative;
+            padding-top: 140%; /* 5:7 Aspect Ratio */
+            overflow: hidden;
+        }
+
+        .card-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.05);
+        }
+
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .card-content {
+            padding: 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--accent-secondary);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .card-meta {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 0.75rem;
+        }
+
+        /* Ranking List */
+        .ranking-list {
+            list-style: none;
+        }
+
+        .ranking-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            align-items: center;
+        }
+
+        .ranking-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.1);
+            width: 30px;
+            text-align: center;
+        }
+
+        .ranking-item:nth-child(1) .ranking-number { color: #ffd700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+        .ranking-item:nth-child(2) .ranking-number { color: #c0c0c0; }
+        .ranking-item:nth-child(3) .ranking-number { color: #cd7f32; }
+
+        .ranking-info {
+            flex: 1;
+        }
+
+        .ranking-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .ranking-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .ranking-score {
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+
+        /* Category Tags */
+        .category-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .category-tag:hover, .category-tag.active {
+            background: rgba(139, 92, 246, 0.15);
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0e;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .grid-3, .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .nav-links {
+                display: none; /* Simplified mobile handling */
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                height: 400px;
+            }
+            .search-box input {
+                width: 140px;
+            }
+            .search-box input:focus {
+                width: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <a href="#" class="logo">
+                <span>✦</span> 幻奇
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">悬疑推理</a>
+                <a href="#">都市传说</a>
+                <a href="#">克苏鲁神话</a>
+                <a href="#">日式怪谈</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索故事、角色或作者...">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-tag">本周热门推荐</span>
+                    <h1>在阴影中寻找真相，<br>在绝望中窥见光明</h1>
+                    <p>幻奇汇聚全球最顶尖的悬疑、灵异与奇幻创作。在这里，每一个故事都是一次心灵的冒险，每一次阅读都是对未知的探索。</p>
+                    <div class="hero-actions">
+                        <a href="#" class="btn btn-primary">开始阅读</a>
+                        <a href="#" class="btn btn-secondary">探索分类</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Category Filter -->
+            <section class="category-section">
+                <div class="category-grid">
+                    <a href="#" class="category-tag active">全部</a>
+                    <a href="#" class="category-tag">无限流</a>
+                    <a href="#" class="category-tag">灵异复苏</a>
+                    <a href="#" class="category-tag">克苏鲁</a>
+                    <a href="#" class="category-tag">赛博朋克</a>
+                    <a href="#" class="category-tag">日式恐怖</a>
+                    <a href="#" class="category-tag">中式志怪</a>
+                    <a href="#" class="category-tag">心理惊悚</a>
+                </div>
+            </section>
+
+            <!-- Featured Section -->
+            <section class="featured-section">
+                <div class="section-header">
+                    <h2 class="section-title">精选连载</h2>
+                    <a href="#" class="section-link">查看全部 <span>&rarr;</span></a>
+                </div>
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <img src="https://picsum.photos/seed/ghost1/400/560" alt="封面图" class="card-image">
+                            <div class="play-icon">▶</div>
+                            <div class="card-overlay">
+                                <span style="color:#fff; font-size:0.8rem;">点击阅读</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-tag">灵异复苏</span>
+                            <h3 class="card-title"><a href="#">深夜食堂的第十三道菜</a></h3>
+                            <p class="card-desc">无论你多晚走进这里，只要点一份菜，老板总会记得你曾经失去的亲人。今晚，他为你准备了什么？</p>
+                            <div class="card-meta">
+                                <span>作者：暗夜行者</span>
+                                <span>12.5万</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <img src="https://picsum.photos/seed/ghost2/400/560" alt="封面图" class="card-image">
+                            <div class="play-icon">▶</div>
+                            <div class="card-overlay">
+                                <span style="color:#fff; font-size:0.8rem;">点击阅读</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-tag">赛博朋克</span>
+                            <h3 class="card-title"><a href="#">霓虹雨中的幽灵代码</a></h3>
+                            <p class="card-desc">在2077年的新东京，一位黑客发现了一段无法删除的代码，它似乎在记录着所有死去之人的名字。</p>
+                            <div class="card-meta">
+                                <span>作者：零号机</span>
+                                <span>8.2万</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <img src="https://picsum.photos/seed/ghost3/400/560" alt="封面图" class="card-image">
+                            <div class="play-icon">▶</div>
+                            <div class="card-overlay">
+                                <span style="color:#fff; font-size:0.8rem;">点击阅读</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-tag">无限流</span>
+                            <h3 class="card-title"><a href="#">规则怪谈：红色医院</a></h3>
+                            <p class="card-desc">欢迎来到生存游戏。这里的规则只有三条：不要回头，不要说话，不要相信穿白大褂的人。</p>
+                            <div class="card-meta">
+                                <span>作者：逻辑鬼才</span>
+                                <span>45.1万</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Ranking Section -->
+            <section class="ranking-section" style="margin-top: 4rem;">
+                <div class="section-header">
+                    <h2 class="section-title">热门榜单</h2>
+                    <div style="display:flex; gap:1rem;">
+                        <a href="#" class="section-link">周榜</a>
+                        <a href="#" class="section-link">月榜</a>
+                        <a href="#" class="section-link" style="color:var(--accent-primary);">总榜</a>
+                    </div>
+                </div>
+                <ul class="ranking-list">
+                    <li class="ranking-item">
+                        <span class="ranking-number">1</span>
+                        <div class="ranking-info">
+                            <a href="#" class="ranking-title">深渊凝视者：序章</a>
+                            <span class="ranking-meta">恐怖悬疑 / 热度 128万</span>
+                        </div>
+                        <span class="ranking-score">9.9</span>
+                    </li>
+                    <li class="ranking-item">
+                        <span class="ranking-number">2</span>
+                        <div class="ranking-info">
+                            <a href="#" class="ranking-title">被诅咒的玩偶屋</a>
+                            <span class="ranking-meta">日式怪谈 / 热度 95万</span>
+                        </div>
+                        <span class="ranking-score">9.8</span>
+                    </li>
+                    <li class="ranking-item">
+                        <span class="ranking-number">3</span>
+                        <div class="ranking-info">
+                            <a href="#" class="ranking-title">我在精神病院学斩神</a>
+                            <span class="ranking-meta">东方玄幻 / 热度 88万</span>
+                        </div>
+                        <span class="ranking-score">9.7</span>
+                    </li>
+                    <li class="ranking-item">
+                        <span class="ranking-number">4</span>
+                        <div class="ranking-info">
+                            <a href="#" class="ranking-title">诡秘之主：源堡的秘密</a>
+                            <span class="ranking-meta">克苏鲁 / 热度 76万</span>
+                        </div>
+                        <span class="ranking-score">9.6</span>
+                    </li>
+                    <li class="ranking-item">
+                        <span class="ranking-number">5</span>
+                        <div class="ranking-info">
+                            <a href="#" class="ranking-title">镜中人</a>
+                            <span class="ranking-meta">都市异能 / 热度 65万</span>
+                        </div>
+                        <span class="ranking-score">9.5</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Latest Updates -->
+            <section class="updates-section" style="margin-top: 4rem;">
+                <div class="section-header">
+                    <h2 class="section-title">最新更新</h2>
+                    <a href="#" class="section-link">更多更新 <span>&rarr;</span></a>
+                </div>
+                <div class="grid-4">
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <img src="https://picsum.photos/seed/ghost4/300/420" alt="封面" class="card-image">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title" style="font-size:1rem;"><a href="#">山村老尸续集：水鬼的复仇</a></h3>
+                            <div class="card-meta" style="margin-top:0.5rem;">
+                                <span>更新至 5话</span>
+                                <span>2小时前</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <img src="https://picsum.photos/seed/ghost5/300/420" alt="封面" class="card-image">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title" style="font-size:1rem;"><a href="#">无法逃脱的密室</a></h3>
+                            <div class="card-meta" style="margin-top:0.5rem;">
+                                <span>更新至 12话</span>
+                                <span>5小时前</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <img src="https://picsum.photos/seed/ghost6/300/420" alt="封面" class="card-image">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title" style="font-size:1rem;"><a href="#">午夜凶铃：铃声响起</a></h3>
+                            <div class="card-meta" style="margin-top:0.5rem;">
+                                <span>更新至 8话</span>
+                                <span>昨天</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <img src="https://picsum.photos/seed/ghost7/300/420" alt="封面" class="card-image">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title" style="font-size:1rem;"><a href="#">第13级台阶</a></h3>
+                            <div class="card-meta" style="margin-top:0.5rem;">
+                                <span>更新至 20话</span>
+                                <span>昨天</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span>✦</span> 幻奇
+                    </a>
+                    <p>专注于悬疑、灵异与奇幻内容的沉浸式阅读平台。我们致力于为读者提供最优质的故事体验，探索未知的世界。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>探索</h4>
+                    <ul>
+                        <li><a href="#">最新发布</a></li>
+                        <li><a href="#">热门排行</a></li>
+                        <li><a href="#">编辑推荐</a></li>
+                        <li><a href="#">专题活动</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>分类</h4>
+                    <ul>
+                        <li><a href="#">悬疑推理</a></li>
+                        <li><a href="#">都市传说</a></li>
+                        <li><a href="#">克苏鲁神话</a></li>
+                        <li><a href="#">日式怪谈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 幻奇平台. All Rights Reserved. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
